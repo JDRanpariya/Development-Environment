@@ -1,0 +1,7 @@
+- name: Install system pkgs
+  become: true
+  pacman:
+    name: ["build_devel", "xorg-server", "xorg-xinit"]
+  tags:
+    - install
+    - core

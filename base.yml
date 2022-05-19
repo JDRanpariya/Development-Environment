@@ -1,0 +1,14 @@
+
+- hosts: localhost
+  pre_tasks:
+  - name: Update Pacman 
+    become: true
+    pacman:
+      update_cache: yes
+      upgrade: yes
+    tags:
+      - install
+      - core
+  tasks:
+    - include: tasks/zsh.yml
+    - include: tasks/core-setup.yml
